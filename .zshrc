@@ -167,3 +167,18 @@ defaults write NSGlobalDomain InitialKeyRepeat -int 10
 
 # zellij别名
 alias zj="zellij -l compact"
+
+# 设置brew的镜像源
+export HOMEBREW_BREW_GIT_REMOTE="https://mirrors.aliyun.com/homebrew/brew.git"
+export HOMEBREW_CORE_GIT_REMOTE="https://mirrors.aliyun.com/homebrew/homebrew-core.git"
+export HOMEBREW_API_DOMAIN="https://mirrors.aliyun.com/homebrew/homebrew-bottles/api"
+export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.aliyun.com/homebrew/homebrew-bottles"
+
+# 用 Homebrew 安装的 openjdk@17
+export JAVA_HOME=/opt/homebrew/opt/openjdk@17/libexec/openjdk.jdk/Contents/Home
+
+# 添加到 PATH
+export PATH=$JAVA_HOME/bin:$PATH
+
+# rbenv
+eval "$(rbenv init -)"
