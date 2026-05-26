@@ -123,6 +123,7 @@ alias ngsr="sudo nginx -s reload"
 alias ngst="sudo nginx -s stop"
 alias vi="nvim"
 alias vim="nvim"
+alias cc="claude"
 
 # oh my zsh 扩展命令
 alias gstat="git add . && git stash save '暂存' && git stash apply stash@{0} && git restore --staged ."
@@ -168,6 +169,12 @@ defaults write NSGlobalDomain InitialKeyRepeat -int 10
 # zellij别名
 alias zj="zellij -l compact"
 
+# 快速起项目以及构建别名
+alias a="pnpm android"
+alias i="pnpm ios -- --device 'cary'"
+alias ba="eas build --platform android --profile preview"
+alias bi="eas build --platform ios --profile preview --auto-submit"
+
 # 设置brew的镜像源
 export HOMEBREW_BREW_GIT_REMOTE="https://mirrors.aliyun.com/homebrew/brew.git"
 export HOMEBREW_CORE_GIT_REMOTE="https://mirrors.aliyun.com/homebrew/homebrew-core.git"
@@ -180,5 +187,18 @@ export JAVA_HOME=/opt/homebrew/opt/openjdk@17/libexec/openjdk.jdk/Contents/Home
 # 添加到 PATH
 export PATH=$JAVA_HOME/bin:$PATH
 
+# 增加adb的环境变量
+export ANDROID_SDK_ROOT="$HOME/Library/Android/sdk"
+export PATH="$ANDROID_SDK_ROOT/platform-tools:$PATH"
+
 # rbenv
 eval "$(rbenv init -)"
+
+# 配置网络代理
+export http_proxy=http://127.0.0.1:7890
+export https_proxy=http://127.0.0.1:7890
+export HTTP_PROXY=http://127.0.0.1:7890
+export HTTPS_PROXY=http://127.0.0.1:7890
+export all_proxy=socks5://127.0.0.1:7891
+
+export PATH="$HOME/.local/bin:$PATH"
